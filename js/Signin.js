@@ -1,12 +1,11 @@
-var firebaseConfig = {
-  apiKey: 'AIzaSyAzcwgZuLA7dO9g4sQhXQVTUgCo0M8m2qM',
-  authDomain: 'grocerylist-91956.firebaseapp.com',
-  databaseURL: 'https://grocerylist-91956.firebaseio.com',
-  projectId: 'grocerylist-91956',
-  storageBucket: 'grocerylist-91956.appspot.com',
-  messagingSenderId: '813812426276',
-  appId: '1:813812426276:web:93e5897af12892ff78dab1',
-  measurementId: 'G-VZ83BTR72T',
+const firebaseConfig = {
+  apiKey: "AIzaSyAdQK9LZn7_AAXo1Cu9-v0AbZVcSh4FEA0",
+  authDomain: "csc225-9aadf.firebaseapp.com",
+  projectId: "csc225-9aadf",
+  storageBucket: "csc225-9aadf.appspot.com",
+  messagingSenderId: "583854877860",
+  appId: "1:583854877860:web:1b51a06f357c7f0cefca31",
+  measurementId: "G-EBKL03K9XW"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -16,8 +15,8 @@ $('#Login').submit(function (e) {
   e.preventDefault();
   // get the user name and password from form
   // You need to change this.
-  var email = 'yilianz4@gmail.com';
-  var password = 'ddsgagafda';
+  var email    = $("#Login-form input[name='login']").val();
+  var password = $("#Login-form input[name='pwd']").val();
 
   firebase
     .auth()
