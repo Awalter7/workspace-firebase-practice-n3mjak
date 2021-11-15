@@ -1,0 +1,66 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<title>Make a reservation</title>
+	<!-- Jquery library   ---->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+	</script>
+
+</head>
+
+<body>
+	<div class="message">
+		<h1>Make a reservation</h1>
+
+		<form>
+			<p>
+				Name: <input type ="text" name="name">
+                </p>
+				<p>
+					Check in: <input type="date" name="checkin">  Check out: <input type="date" name="checkout">
+                </p>
+					<p>
+						Number of guest: <input type="number" name ="num" min="0" max="5">
+                </p>
+						<p>
+							Room Type: <select name="room">
+                        <option>1 Bedroom Smaller Suite $139 </option>
+                        
+                        <option> 1 Bedroom Larger Suite $169 </option>
+                        <option> 1 Bedroom Junior Suite $289</option>
+                        <option> Grand Suite $289</option>
+                    </select>
+						</p>
+
+						<p>
+							<input type="button" value="submit">
+                </p>
+
+		</form>
+	</div>
+
+
+
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+
+
+
+	<!--  Save and display data on real time  -->
+
+	<script src="js/hotel-json.js"></script>
+
+
+
+</body>
+
+</html>

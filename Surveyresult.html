@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<title>Welcome to QR Sample Survey</title>
+	<!-- Jquery library   ---->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+	</script>
+
+</head>
+
+<body>
+	<div class="message">
+		<h1>Sample Survey</h1>
+
+		<form class="sampleSurvey" >
+			<h2>
+				Which of the following strategies for improving response rate do you
+				prefer?
+			</h2>
+			<p>
+				<input type="radio" name="choice" value="A" />Added a bonus/extra
+          credit question or questions to the final if a certain course response
+          rate was achieved.
+        </p>
+				<p>
+					<input type="radio" name="choice" value="B" />Sent daily email
+          reminder asking them to complete evaluations.
+        </p>
+
+					<p>
+						<input type="radio" name="choice" value="C" />Encouraged students to
+          bring laptops/tablets/ smartphones to class and allowed time for
+          students to complete the evaluation.
+        </p>
+						<p>
+							<input type="radio" name="choice" value="D" />Talked about the
+          importance of class evaluation in class.
+        </p>
+							<p><input type="radio" name="choice" value="E" />None of the above.</p>
+
+								<h2>Any additional comments?</h2>
+								<textarea name="comm" cols="40" rows="5"></textarea>
+
+								<p><input type="submit" value="submit" /></p>
+                
+		</form>
+	</div>
+
+
+	<div class="message">
+		<h1>Survey Results</h1>
+		<p id="results">
+
+		</p>
+		<table>
+			<tr>
+				<th>Strategies for improving response rate </th>
+				<th>votes </th>
+			</tr>
+			<tr>
+				<td>Added a bonus/extra credit question or questions
+					to the final if a certain course response rate was achieved.</td>
+				<td id="ans1">0</td>
+			</tr>
+			<tr>
+				<td>Sent daily email reminder asking them to complete evaluations.</td>
+				<td id="ans2">0</td>
+			</tr>
+			<tr>
+				<td>Encouraged students to bring laptops/tablets/ smartphones to class and allowed time for students to
+					complete the evaluation.</td>
+				<td id="ans3">0</td>
+			</tr>
+			<tr>
+				<td>Talked about the importance of class evaluation in class. </td>
+				<td id="ans4">0</td>
+			</tr>
+			<tr>
+				<td>None of the above.</td>
+				<td id="ans5">0</td>
+			</tr>
+
+		</table>
+	</div>
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+
+
+
+	<!--  Save and display data on real time  -->
+
+	<script src="js/SaveDisplay.js"></script>
+
+
+
+</body>
+
+</html>
