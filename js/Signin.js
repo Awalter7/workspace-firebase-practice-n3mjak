@@ -7,17 +7,17 @@ const firebaseConfig = {
   appId: "1:583854877860:web:1b51a06f357c7f0cefca31",
   measurementId: "G-EBKL03K9XW"
 };
-// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 
-// save the data
+
 $('#Login').submit(function (e) {
   e.preventDefault();
-  // get the user name and password from form
-  // You need to change this.
-  var email    = $("#Login-form input[name='login']").val();
-  var password = $("#Login-form input[name='pwd']").val();
 
+  var email = $("#login").val();
+  console.log('email you typed is'+email);
+  var password = $("#pwd").val();
+  console.log(password);
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
@@ -27,7 +27,6 @@ $('#Login').submit(function (e) {
       console.log('login in');
       let user = firebase.auth().currentUser;
 
-      //user.updateProfile({ displayName: "Not sure" });
       if (user != null) {
         name = user.displayName;
         email = user.email;

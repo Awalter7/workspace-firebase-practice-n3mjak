@@ -7,29 +7,21 @@ const firebaseConfig = {
   appId: "1:583854877860:web:1b51a06f357c7f0cefca31",
   measurementId: "G-EBKL03K9XW"
 };
-// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 
-// save the data
 $("#signup-form").submit(function(e) {
   e.preventDefault();
-  //get the username(email) and password from the form
-  // change the following code
-  var email    = $("#signup-form input[name='username']").val();
+  var email = $("#signup-form input[name='username']").val();
+  console.log('email you typed is'+email);
   var password = $("#signup-form input[name='password']").val();
-  var douppass = $("#signup-form input[name='cpassword']").val();
+  console.log(password);
 
-  if(password != douppass){
-    alert("The passwords do not match");
-  }else{
-    firebase
-      // create a user with email address and password
 
+  firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(user => {
-      // Signed in
-      // ...
 
       console.log("You are signed up");
       window.location.href = "Login.html";
@@ -40,11 +32,18 @@ $("#signup-form").submit(function(e) {
       console.log(error.code);
       console.log(errorMessage);
     });
-  }
 });
 
 $('#google').click(function(){
-  
-var provider = new firebase.auth.signInWithPopup(provider).then((result) =>{
-  console.log('click google log in method')
-});});
+  console.log("Click google login method");
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+    firebase.auth().signInWithRedirect(provider);
+
+  });
+});
